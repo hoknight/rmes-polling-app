@@ -1,0 +1,5 @@
+{
+  "name": "School Consensus Polling App",
+  "description": "A polling application for collecting and visualizing school consensus data, featuring voting, persistence, and secure statistics dashboard.",
+  "requestFramePermissions": []
+}
