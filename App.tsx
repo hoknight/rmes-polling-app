@@ -5,6 +5,7 @@ import { Stats } from './views/Stats';
 import { Admin } from './views/Admin';
 import { Page } from './types';
 import { getTitle } from './services/storage';
+import { Lock, BarChart3 } from 'lucide-react';
 
 const App: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<Page>('home');
@@ -39,19 +40,20 @@ const App: React.FC = () => {
       <header className="sticky top-0 z-50 bg-white/70 backdrop-blur-md border-b border-white/20 shadow-sm shrink-0">
         <div className="w-full px-6 h-16 flex items-center justify-between max-w-7xl mx-auto">
           <div 
-            className="flex items-center gap-3 font-bold text-xl tracking-tight cursor-pointer text-slate-800 hover:text-indigo-600 transition-colors" 
+            className="flex items-center gap-3 font-bold text-xl tracking-tight cursor-pointer text-slate-800 hover:text-indigo-600 transition-colors group" 
             onClick={() => setCurrentPage('home')}
           >
-             <div className="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center shadow-indigo-200 shadow-lg">
-               📊
+             <div className="w-8 h-8 rounded-lg bg-indigo-600 text-white flex items-center justify-center shadow-indigo-200 shadow-lg group-hover:scale-105 transition-transform">
+               <BarChart3 className="w-5 h-5" />
              </div>
              <span>{appTitle}</span>
           </div>
           <button 
             onClick={() => setCurrentPage('admin')}
-            className="text-sm font-medium text-slate-500 hover:text-indigo-600 bg-slate-100/50 hover:bg-white px-4 py-2 rounded-full transition-all duration-200"
+            className="flex items-center gap-2 text-sm font-medium text-slate-600 hover:text-indigo-600 bg-white/80 hover:bg-white border border-slate-200 hover:border-indigo-200 px-5 py-2.5 rounded-full transition-all duration-200 shadow-sm hover:shadow-md"
           >
-            管理員
+            <Lock className="w-4 h-4" />
+            <span>管理員登入</span>
           </button>
         </div>
       </header>
